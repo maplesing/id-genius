@@ -7,7 +7,7 @@ import (
 func TestUuidGenerator(t *testing.T) {
 	for i := 0; i < 10; i++ {
 		idGen, err := NewIdGenerator(&Option{
-			idGeneratorType: Uuid,
+			IdGeneratorType: Uuid,
 		})
 		if err != nil {
 			t.Errorf("create id generator failed")
@@ -25,9 +25,9 @@ func TestUuidGenerator(t *testing.T) {
 func TestSnowFlakeGenerator(t *testing.T) {
 	for i := 0; i < 10; i++ {
 		idGen, err := NewIdGenerator(&Option{
-			idGeneratorType: SnowFlake,
-			datacenterId:    11,
-			workerId:        30,
+			IdGeneratorType: SnowFlake,
+			DatacenterId:    11,
+			WorkerId:        30,
 		})
 		if err != nil {
 			t.Errorf("create id generator failed")
@@ -45,7 +45,7 @@ func TestSnowFlakeGenerator(t *testing.T) {
 func BenchmarkUuidGenerator(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		idGen, _ := NewIdGenerator(&Option{
-			idGeneratorType: Uuid,
+			IdGeneratorType: Uuid,
 		})
 
 		idGen.GenerateNewId()
@@ -55,9 +55,9 @@ func BenchmarkUuidGenerator(b *testing.B) {
 func BenchmarkSnowFlakeGenerator(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		idGen, _ := NewIdGenerator(&Option{
-			idGeneratorType: SnowFlake,
-			datacenterId:    1,
-			workerId:        10,
+			IdGeneratorType: SnowFlake,
+			DatacenterId:    1,
+			WorkerId:        10,
 		})
 
 		idGen.GenerateNewId()
@@ -68,7 +68,7 @@ func BenchmarkUuidGeneratorParallel(b *testing.B) {
 	b.RunParallel(func(pb *testing.PB) {
 		for pb.Next() {
 			idGen, _ := NewIdGenerator(&Option{
-				idGeneratorType: Uuid,
+				IdGeneratorType: Uuid,
 			})
 
 			idGen.GenerateNewId()
@@ -80,9 +80,9 @@ func BenchmarkSnowFlakeGeneratorParallel(b *testing.B) {
 	b.RunParallel(func(pb *testing.PB) {
 		for pb.Next() {
 			idGen, _ := NewIdGenerator(&Option{
-				idGeneratorType: SnowFlake,
-				datacenterId:    1,
-				workerId:        10,
+				IdGeneratorType: SnowFlake,
+				DatacenterId:    1,
+				WorkerId:        10,
 			})
 
 			idGen.GenerateNewId()

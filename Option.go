@@ -1,8 +1,8 @@
 package id_genius
 
 type Option struct {
-	idGeneratorType IdGeneratorType
+	IdGeneratorType IdGeneratorType
 
-	datacenterId int64
-	workerId     int64
+	DatacenterId int64
+	WorkerId     int64
 }

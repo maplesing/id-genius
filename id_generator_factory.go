@@ -15,17 +15,17 @@ func NewGeneralIdGeneratorFactory(option *Option) *GeneralIdGeneratorFactory {
 }
 
 func (g *GeneralIdGeneratorFactory) CreateIdGenerator() (IdGenerator, error) {
-	switch g.option.idGeneratorType {
+	switch g.option.IdGeneratorType {
 	case Uuid:
 		return newUuidGenerator(), nil
 	case SnowFlake:
-		generator, err := getSnowFlakeGenerator(g.option.datacenterId, g.option.workerId)
+		generator, err := getSnowFlakeGenerator(g.option.DatacenterId, g.option.WorkerId)
 		if err != nil {
 			return nil, err
 		}
 
 		return generator, nil
 	default:
-		return nil, fmt.Errorf("idGeneratorType %v is not found", g.option.idGeneratorType)
+		return nil, fmt.Errorf("idGeneratorType %v is not found", g.option.IdGeneratorType)
 	}
 }
