@@ -1,0 +1,4 @@
+github.com/google/uuid v1.3.0 h1:t6JiXgmwXMjEs8VusXIJk2BXHsn+wx8BZdTaoZ5fu7I=
+github.com/google/uuid v1.3.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
+github.com/maplesing/id-genius v1.0.2 h1:k5XYiQBb1LONrulPtGQwwwMZjfFHknTaJBKVt3MeqV4=
+github.com/maplesing/id-genius v1.0.2/go.mod h1:5VyKF2SoEQjjxfPgS5cIjsQyirTzKM289rqvCPDCgzo=
