@@ -1,4 +1,4 @@
-module id-genius
+module github.com/maplesing/id-genius
 
 go 1.20
 
