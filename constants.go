@@ -6,8 +6,4 @@ const (
 	Default IdGeneratorType = iota
 	Uuid
 	SnowFlake
-	Mysql
-	Redis
-	Zookeeper
-	Etcd
 )

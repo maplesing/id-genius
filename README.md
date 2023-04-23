@@ -6,7 +6,3 @@ The supported generators:
 
 - [x] UUID
 - [x] Snowflake
-- [ ] redis
-- [ ] zookeeper
-- [ ] etcd
-- [ ] mysql
