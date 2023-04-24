@@ -1,13 +1,13 @@
 # IdGenius
-IdGenius is a distributed unique ID generator, which can generate distributed unique IDs with different generators, such as UUID, snowflake.
+IdGenius 是一个分布式全局ID生成器，可以使用不同的方法生成，比如：UUID，雪花算法。
 
-## The supported generators:
+## 支持的生成方法
 
 - [x] UUID
-- [x] Snowflake
+- [x] 雪花算法
 
-## Usage
-### UUID generator
+## 使用方式
+### UUID
 ```go
 func generateNewIdByUuid() (string, error) {
 	idGen, err := idGen.NewIdGenerator(&idGen.Option{
@@ -25,8 +25,7 @@ func generateNewIdByUuid() (string, error) {
 	return newId, nil
 }
 ```
-
-### Snowflake generator
+### 雪花算法
 ```go
 func generateNewIdBySnowflake() (string, error) {
 	idGen, err := idGen.NewIdGenerator(&idGen.Option{
@@ -46,17 +45,12 @@ func generateNewIdBySnowflake() (string, error) {
 	return newId, nil
 }
 ```
-
-## Benchmark tests
+## Benchmark 测试
 ```text
 BenchmarkUuidGenerator-12                         669319              1643 ns/op              64 B/op          2 allocs/op
 BenchmarkSnowFlakeGenerator-12                   4886080               245.4 ns/op            24 B/op          1 allocs/op
 BenchmarkUuidGeneratorParallel-12                1816929               785.5 ns/op            64 B/op          2 allocs/op
 BenchmarkSnowFlakeGeneratorParallel-12           3339204               356.6 ns/op            24 B/op          1 allocs/op
 ```
-
-## References
+## 参考
 * [twitter snowflake](https://github.com/twitter-archive/snowflake)
-
-## Other version README
-* [Chinese](https://github.com/maplesing/id-genius/blob/main/README_ZH.md)
